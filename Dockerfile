@@ -7,6 +7,7 @@ RUN curl -sL https://deb.nodesource.com/setup_8.x | bash - && curl -sL https://d
 RUN apt-get update && apt-get install -y nodejs && npm install -g npm
 
 RUN apt-get update && apt-get install -y \
+	iputils-ping \
 	libcairo2-dev \
 	libjpeg-dev \
 	libpango1.0-dev \
@@ -19,7 +20,6 @@ RUN apt-get update && apt-get install -y \
   gcc \
   libusb-1.0-0-dev
 
-RUN eval $(ssh-agent -s)
 RUN mkdir -p ~/.ssh
 
 CMD [ "node" ]
